@@ -1,0 +1,34 @@
+.helloInput {
+  width: 200px;
+}
+
+.title{
+  color: black;
+}
+
+.mainText{
+  color:white;
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 100px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

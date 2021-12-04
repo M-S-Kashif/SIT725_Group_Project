@@ -1,0 +1,24 @@
+{
+  "name": "task-3.1p",
+  "version": "1.0.0",
+  "description": "A follow up of the WireFrame",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-S-Kashif/sit725-2021-t3-prac3.git"
+  },
+  "author": "Muhammad Sohaib bin Kashif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-S-Kashif/sit725-2021-t3-prac3/issues"
+  },
+  "homepage": "https://github.com/M-S-Kashif/sit725-2021-t3-prac3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "nodemon": "^2.0.15"
+  }
+}

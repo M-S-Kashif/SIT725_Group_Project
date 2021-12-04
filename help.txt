@@ -1,0 +1,31 @@
+<div class="col s6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="discover.jpg" height="350">
+                        <span class="card-title">Discover What's New Today!</span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Discover What's New Today!<i class="material-icons right">close</i></span>
+                        <p>Check out some of the projects our collaborators have in store.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Click Here</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="linked.jpg" height="350">
+                        <span class="card-title">Meet Sohaib!</span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Meet Sohaib!<i class="material-icons right">close</i></span>
+                        <p>Do you want to learn about Robotics? Feel free to leave me a message!</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://www.linkedin.com/in/muhammad-sohaib-bin-kashif-a992a5226/">My LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
