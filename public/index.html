@@ -57,13 +57,6 @@
             <!--Generating our Cards with components here...-->
 
         </div>
-
-        <!--Modal.html-->
-        <div class="row center" style="padding-top:50px;">
-            <!-- Modal Trigger -->
-            <button data-target="modal1" class="btn modal-trigger" >Share a new project with us</button>
-        </div>
-
     </main>
 
     <footer style="padding:30px; background-color: darkcyan">
@@ -88,43 +81,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Custom Environemnt Script -->
-    <script src="env.js"></script>
+    <script src="env-index.js"></script>
 
 </body>
 
 </html>
-
-
-<!--Using a Modal Object for creating a new project...-->
-<div>
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Share with us a new project!</h4>
-            <p> Please provide us some details about your working project.</p>
-        </div>
-
-        <!--Project Details Inserted here!-->
-        <div class="input-field column s12">
-            <input value="" id="name" type="text" class="validate">
-            <label class="name" for="name">Name: </label>
-        </div>
-        <div class="input-field column s12">
-            <input value="" id="title" type="text" class="validate">
-            <label class="title" for="title">Project Title: </label>
-        </div>
-
-        <div class="input-field column s12">
-            <input value="" id="description" type="text" class="validate">
-            <label class="username" for="description">Project Description: </label>
-        </div>
-        <div class="input-field column s12">
-            <input value="" id="image" type="text" class="validate">
-            <label class="username" for="image">Project Image: </label>
-        </div>
-
-        <div class="modal-footer">
-            <a onclick="newProject()" href="#!" class="modal-close waves-effect waves-green btn-flat">Okay</a>
-        </div>
-    </div>
-</div>
