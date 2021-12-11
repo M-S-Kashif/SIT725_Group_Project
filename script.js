@@ -1,8 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 const { MongoClient } = require('mongodb');
+let dbConnect = require("./dbConnect");
 
-var app = express();
+
+let app = express();
 var port = 8080;
 app.set('port', port);
 
@@ -10,6 +12,9 @@ var directory = express.static('public');
 app.use(directory);
 app.use(bodyParser.json());
 
+
+let projectsRouter = require('./routes/projects')
+app.use('api/projects', projectsRouter);
 
 //Project Contents...
 const dummyProject1 = {

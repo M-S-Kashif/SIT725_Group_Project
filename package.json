@@ -4,6 +4,8 @@
   "description": "A follow up of the WireFrame",
   "main": "script.js",
   "scripts": {
+    "start": "node script.js",
+    "start-dev": "nodemon script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
