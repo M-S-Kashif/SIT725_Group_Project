@@ -1,8 +1,10 @@
+//Importing Libraries...
 var express = require("express");
 var bodyParser = require("body-parser");
-const { MongoClient } = require('mongodb');
-let dbConnect = require("./dbConnect");
 
+//Importing Router Layer and DB Layer in Script...
+let projectsRouter = require('./routes/projects_router');
+let projectsDB = require('./db/project_db');
 
 let app = express();
 var port = 8080;
@@ -11,83 +13,50 @@ app.set('port', port);
 var directory = express.static('public');
 app.use(directory);
 app.use(bodyParser.json());
-
-
-let projectsRouter = require('./routes/projects')
-app.use('api/projects', projectsRouter);
-
-//Project Contents...
-const dummyProject1 = {
-    name: 'Hobbs',
-    ID: 1,
-    description: 'Used Unity to create a Mobile Application',
-    title: "Mobile App",
-    image: "Unity Mobile App"
-};
-
-const dummyProject2 = {
-    name: 'Sohaib',
-    ID: 2,
-    description: 'Made a three-legged Robot with a camera',
-    title: "Spy Robot",
-    image: "Spy Robot"
-};
-
-let projectList = [dummyProject1, dummyProject2];
-
-
-
-//Uploading our Project list contents on request...
-app.get('/projectlist', (req, res) => {
-    console.log('Sending in the list as requested...');
-    //res.send(projectList);
-    getProjects(res);
-});
-
-
-//Temporarily adding project data in the server...
-app.post('/projectlist', (req, res) => {
-    res.send('Project List');
-    console.log('New project posted');
-    console.log('body', req.body);
-    let project = req.body;
-
-    //Use this command for tesing instead of connecting the items in the database...
-    //projectList.push(project);
-    //res.send({result:200});
-
-    insertProject(project, res);
-});
-
+app.use('/', projectsRouter);
 
 app.get('/test', function (req, res) {
     console.log("Test is working...");
+    res.sendStatus(200);           //Check this from test.js if this code is passed in the test mentioned...
+
+    //Sending a sample json file...
+    res.json({
+        status: 200,
+        result: 25
+    });
 });
 
 app.listen(port, () => {
     console.log("Hello! I am listening to the port: " + port);
 });
 
+app.get('/add/:n1/:n2', function (req, res) {
+    console.log("Adding two numbers...");
+    let num1 = parseInt(req.params.n1);
+    let num2 = parseInt(req.params.n2);
+    let sum = num1 + num2;
+    res.json({ result: sum });
+    res.sendStatus(200);
+});
 
 
-//Establishing a Database Connection using MongoDB...
-const uri = "mongodb+srv://sohaibkashif97:<password>@cluster0.ebnvy.mongodb.net/reckoning?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-//Creating a collection for our MongoDB...
-let projectsCollection;
-
-//Function to open the collection...
-const openConnection = (message) => {
-    client.connect((err, db) => {
-        projectsCollection = client.db("RoboticsHut").collection("projects");
-        if (!err) {
-            console.log("Database Connected...")
-        }
-    });
-};
+//Make sure to open the connection...
+projectsDB.connect();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //Insert a project into the collection...
 const insertProject = (project, res) => {
     projectsCollection.insert(project, (err, result) => {
@@ -104,6 +73,4 @@ const getProjects = (res) => {
         res.send(result);
     });
 };
-
-//Make sure to open the connection...
-openConnection();
+*/

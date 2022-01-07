@@ -44,11 +44,11 @@ cardcontents = (cards) => {
 };
 
 
-//script to run the document...
+//script to run the document.Only once; after the page gets loaded..
 $(document).ready(function () {
     console.log("Running the Environment Script!");
 
-    console.log('Creating the components...');
+    console.log('Creating the components on index page...');
     cardcontents(carddata);
 
     //test get call
